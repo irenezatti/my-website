@@ -2,61 +2,95 @@ import { useState } from 'react';
 import './index.css'; // Ensure this file has Tailwind CSS setup
 
 function App() {
-  // State to track the current page
   const [currentPage, setCurrentPage] = useState('home');
 
-  // Function to render the content based on the current page
   const renderContent = () => {
     switch (currentPage) {
       case 'home':
-        return <h1 className="text-5xl font-bold">Welcome to My Website</h1>;
+        return (
+          <div className="text-center mt-20">
+            <h1 className="text-7xl font-extrabold text-yellow-400">Welcome to my website</h1>
+            <p className="text-2xl mt-4 text-white">this is where I share stuff</p>
+          </div>
+        );
       case 'about':
-        return <h1 className="text-5xl font-bold">About Me</h1>;
-      case 'photos':
-        return <h1 className="text-5xl font-bold">My Photos</h1>;
+        return (
+          <div className="text-center mt-20">
+            <h1 className="text-6xl font-extrabold text-white">About Me</h1>
+            <p className="text-xl mt-4 text-white max-w-2xl mx-auto">
+              Welcome to my personal website! Here you'll find a collection of my projects, thoughts, and everything that I love sharing with the world. Stay tuned for more updates!
+            </p>
+          </div>
+        );
+      case 'pictures':
+        return (
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 px-8">
+            <img src="path_to_image_1" alt="Personal Pic 1" className="w-full h-64 object-cover rounded-lg shadow-lg" />
+            <img src="path_to_image_2" alt="Personal Pic 2" className="w-full h-64 object-cover rounded-lg shadow-lg" />
+            <img src="path_to_image_3" alt="Personal Pic 3" className="w-full h-64 object-cover rounded-lg shadow-lg" />
+          </div>
+        );
       case 'contact':
-        return <h1 className="text-5xl font-bold">Contact Me</h1>;
+        return (
+          <div className="text-center mt-20">
+            <h1 className="text-6xl font-extrabold text-white">Get in Touch</h1>
+            <p className="text-xl mt-4 text-white">
+              I'd love to hear from you! Reach out to me at{' '}
+              <a href="mailto:contact@ohnoirene.com" className="text-yellow-400 underline">
+                contact@ohnoirene.com
+              </a>
+            </p>
+          </div>
+        );
       default:
-        return <h1 className="text-5xl font-bold">Welcome to My Website</h1>;
+        return null;
     }
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-orange-500">
-      {/* Navigation Buttons */}
-      <nav className="mb-8">
-        <div className="flex space-x-4">
+    <div className="min-h-screen bg-orange-600 flex flex-col">
+      {/* Navigation Bar */}
+      <header className="w-full flex justify-between items-center py-6 px-8 bg-orange-700">
+        {/* Logo */}
+        <div className="text-white text-3xl font-bold cursor-pointer" onClick={() => setCurrentPage('home')}>
+          ohnoirene
+        </div>
+
+        {/* Navigation Links */}
+        <nav className="flex space-x-6">
           <button
             onClick={() => setCurrentPage('home')}
-            className="bg-white text-orange-500 hover:bg-orange-600 hover:text-white font-bold py-2 px-4 rounded-full transition"
+            className="text-white text-lg font-medium hover:text-yellow-400 hover:scale-105 transition transform duration-200"
           >
             Home
           </button>
           <button
             onClick={() => setCurrentPage('about')}
-            className="bg-white text-orange-500 hover:bg-orange-600 hover:text-white font-bold py-2 px-4 rounded-full transition"
+            className="text-white text-lg font-medium hover:text-yellow-400 hover:scale-105 transition transform duration-200"
           >
             About
           </button>
           <button
-            onClick={() => setCurrentPage('photos')}
-            className="bg-white text-orange-500 hover:bg-orange-600 hover:text-white font-bold py-2 px-4 rounded-full transition"
+            onClick={() => setCurrentPage('pictures')}
+            className="text-white text-lg font-medium hover:text-yellow-400 hover:scale-105 transition transform duration-200"
           >
-            Photos
+            Pictures
           </button>
           <button
             onClick={() => setCurrentPage('contact')}
-            className="bg-white text-orange-500 hover:bg-orange-600 hover:text-white font-bold py-2 px-4 rounded-full transition"
+            className="bg-yellow-400 text-orange-700 text-lg font-medium py-2 px-4 rounded-full hover:bg-yellow-500 hover:shadow-lg transition transform duration-200"
           >
             Contact
           </button>
-        </div>
-      </nav>
+        </nav>
+      </header>
 
-      {/* Page Content */}
-      <div className="text-center text-white px-6 py-8">
+      {/* Hero Section */}
+      <div
+        className="flex-grow flex items-center justify-center bg-cover bg-center"
+        style={{ backgroundImage: `url('path_to_your_background_image')` }}
+      >
         {renderContent()}
-        <p className="text-lg mt-4">This is a space to share my journey and work.</p>
       </div>
     </div>
   );
