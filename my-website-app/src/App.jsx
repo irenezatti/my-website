@@ -9,15 +9,21 @@ function App() {
       case 'home':
         return (
           <div className="text-center mt-20">
-            <h1 className="text-7xl font-extrabold text-yellow-400">Welcome to my website</h1>
-            <p className="text-2xl mt-4 text-white">this is where I share stuff</p>
+            <h1 className="text-7xl font-extrabold text-yellow-400 font-poppins">
+              Welcome to my website
+            </h1>
+            <p className="text-2xl mt-4 text-white font-quicksand">
+              This is where I share stuff
+            </p>
           </div>
         );
       case 'about':
         return (
           <div className="text-center mt-20">
-            <h1 className="text-6xl font-extrabold text-white">About Me</h1>
-            <p className="text-xl mt-4 text-white max-w-2xl mx-auto">
+            <h1 className="text-6xl font-extrabold text-white font-poppins">
+              About Me
+            </h1>
+            <p className="text-xl mt-4 text-white max-w-2xl mx-auto font-quicksand">
               Welcome to my personal website! Here you'll find a collection of my projects, thoughts, and everything that I love sharing with the world. Stay tuned for more updates!
             </p>
           </div>
@@ -33,8 +39,10 @@ function App() {
       case 'contact':
         return (
           <div className="text-center mt-20">
-            <h1 className="text-6xl font-extrabold text-white">Get in Touch</h1>
-            <p className="text-xl mt-4 text-white">
+            <h1 className="text-6xl font-extrabold text-white font-poppins">
+              Get in Touch
+            </h1>
+            <p className="text-xl mt-4 text-white font-quicksand">
               I'd love to hear from you! Reach out to me at{' '}
               <a href="mailto:contact@ohnoirene.com" className="text-yellow-400 underline">
                 contact@ohnoirene.com
@@ -52,7 +60,7 @@ function App() {
       {/* Navigation Bar */}
       <header className="w-full flex justify-between items-center py-6 px-8 bg-orange-700">
         {/* Logo */}
-        <div className="text-white text-3xl font-bold cursor-pointer" onClick={() => setCurrentPage('home')}>
+        <div className="text-white text-3xl font-bold cursor-pointer font-poppins" onClick={() => setCurrentPage('home')}>
           ohnoirene
         </div>
 
@@ -60,25 +68,25 @@ function App() {
         <nav className="flex space-x-6">
           <button
             onClick={() => setCurrentPage('home')}
-            className="text-white text-lg font-medium hover:text-yellow-400 hover:scale-105 transition transform duration-200"
+            className="text-white text-lg font-medium hover:text-yellow-400 hover:scale-105 transition transform duration-200 font-poppins"
           >
             Home
           </button>
           <button
             onClick={() => setCurrentPage('about')}
-            className="text-white text-lg font-medium hover:text-yellow-400 hover:scale-105 transition transform duration-200"
+            className="text-white text-lg font-medium hover:text-yellow-400 hover:scale-105 transition transform duration-200 font-poppins"
           >
             About
           </button>
           <button
             onClick={() => setCurrentPage('pictures')}
-            className="text-white text-lg font-medium hover:text-yellow-400 hover:scale-105 transition transform duration-200"
+            className="text-white text-lg font-medium hover:text-yellow-400 hover:scale-105 transition transform duration-200 font-poppins"
           >
             Pictures
           </button>
           <button
             onClick={() => setCurrentPage('contact')}
-            className="bg-yellow-400 text-orange-700 text-lg font-medium py-2 px-4 rounded-full hover:bg-yellow-500 hover:shadow-lg transition transform duration-200"
+            className="bg-yellow-400 text-orange-700 text-lg font-medium py-2 px-4 rounded-full hover:bg-yellow-500 hover:shadow-lg transition transform duration-200 font-poppins"
           >
             Contact
           </button>
